@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#18303f">
+<title>Save the Date · Marian &amp; Raúl</title>
+<meta name="description" content="Guarda la fecha: Marian & Raúl se casan el 27 de marzo de 2027 en Tijuana, Baja California.">
+<meta property="og:title" content="Save the Date · Marian &amp; Raúl · 27 · 03 · 2027">
+<meta property="og:description" content="Guarda la fecha. Invitación formal próximamente.">
+<meta property="og:image" content="https://save-the-date-marian-y-raul.vercel.app/og-image.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Great+Vibes&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Le Major';src:url('LeMajor.ttf') format('truetype');font-display:swap}
+:root{--bg:#fbf8f3;--night:#18303f;--deep:#2c5068;--soft:#b1cad3;--gold-soft:#F7E7CE;--gold-deep:#8a6d3b;
+--foil:linear-gradient(100deg,#c9ab72 0%,#e6d3a8 26%,#FFFBEA 50%,#e6d3a8 74%,#c9ab72 100%)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--night)}
+body{background:var(--night);color:#fff;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;line-height:1.6;overflow-x:clip;max-width:480px;margin:0 auto}
+.foil{background:var(--foil);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#e6d3a8;animation:sweep 7s ease-in-out infinite;display:inline-block;padding:.22em .45em;margin:-.22em -.45em;line-height:1.25;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+@keyframes sweep{0%,100%{background-position:0 0}50%{background-position:100% 0}}
+#hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;isolation:isolate}
+.bg{position:absolute;inset:-8% 0;z-index:-3}
+.bg i{position:absolute;inset:0;background:url(fotos/foto-3.jpg) center 28%/cover;animation:drift 26s ease-in-out infinite alternate}
+@keyframes drift{from{transform:scale(1.02)}to{transform:translate3d(-2%,-1.5%,0) scale(1.1)}}
+.veil{position:absolute;inset:auto 0 0 0;height:62%;z-index:-2;background:linear-gradient(to top,rgba(16,30,40,.94),rgba(16,30,40,.75) 45%,transparent)}
+.cnt{text-align:center;padding:0 24px 56px;width:100%}
+.eyebrow{font-family:'Lato',sans-serif;font-weight:700;font-size:13px;letter-spacing:6px;text-transform:uppercase;color:var(--gold-soft)}
+h1{font-family:'Le Major','Cormorant Garamond',serif;font-weight:400;font-size:clamp(56px,17vw,92px);line-height:1;display:flex;flex-direction:column;align-items:center;margin:8px 0}
+h1 .amp{font-family:'Great Vibes',cursive;font-size:.62em}
+.meta{font-family:'Lato',sans-serif;font-weight:700;font-size:15px;letter-spacing:4px;text-transform:uppercase}
+.meta span{display:block;font-weight:400;letter-spacing:3px;font-size:14px;margin-top:4px}
+.cd{display:flex;justify-content:center;gap:6px;margin:30px 0 8px}
+.cd div{flex:1;max-width:76px}
+.cd b{display:block;font-size:clamp(38px,11vw,50px);font-weight:600;line-height:1;font-variant-numeric:tabular-nums lining-nums;color:#f7efe0}
+.cd small{font-family:'Lato',sans-serif;font-weight:700;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--soft)}
+.soon{margin:26px auto 22px;max-width:300px;font-style:italic;font-size:21px;color:#f3ede3}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 26px;border-radius:40px;border:1px solid #c9ab72;color:var(--gold-soft);text-decoration:none;font-family:'Lato',sans-serif;font-weight:700;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;animation:breathe 3.2s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(1.04)}}
+.rise{animation:rise 1.2s .2s both ease-out}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}.foil{background-position:50% 0}}
+</style>
+</head>
+<body>
+<section id="hero">
+  <div class="bg"><i></i></div><div class="veil"></div>
+  <div class="cnt rise">
+    <p class="eyebrow">Save the date</p>
+    <h1><span class="foil">Marian</span><span class="amp foil" style="animation-delay:-2.6s">&amp;</span><span class="foil" style="animation-delay:-3.9s">Raúl</span></h1>
+    <p class="meta">27 · Marzo · 2027<span>Tijuana, Baja California</span></p>
+    <div class="cd" role="timer" aria-label="Cuenta regresiva">
+      <div><b id="d">--</b><small>Días</small></div><div><b id="h">--</b><small>Horas</small></div><div><b id="m">--</b><small>Min</small></div><div><b id="s">--</b><small>Seg</small></div>
+    </div>
+    <p class="soon">Invitación formal próximamente</p>
+    <a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Marian+%26+Ra%C3%BAl&dates=20270327T190000Z/20270328T050000Z&location=Tijuana%2C+Baja+California">Agregar a calendario</a>
+  </div>
+</section>
+<script>
+const W=new Date('2027-03-27T12:00:00-07:00'),p=n=>String(n).padStart(2,'0');
+function t(){let d=Math.max(0,W-Date.now());d=Math.floor(d/1000);
+document.getElementById('d').textContent=p(Math.floor(d/86400));document.getElementById('h').textContent=p(Math.floor(d%86400/3600));
+document.getElementById('m').textContent=p(Math.floor(d%3600/60));document.getElementById('s').textContent=p(d%60)}
+t();setInterval(t,1000);
+</script>
+</body>
+</html>
