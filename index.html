@@ -44,14 +44,21 @@ h1 .amp{font-family:'Great Vibes',cursive;font-size:.62em}
 .rise{animation:rise 1.2s .2s both ease-out}
 @keyframes rise{from{opacity:0;transform:translateY(24px)}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important}.foil{background-position:50% 0}}
+.ink{position:absolute;inset:auto -10% 0;height:70%;z-index:-1;pointer-events:none;background:url(ink/ink-top.webp) center/cover;mix-blend-mode:screen;opacity:.45;-webkit-mask:radial-gradient(circle,#000 48%,transparent 70%) center/330% 330% no-repeat;mask:radial-gradient(circle,#000 48%,transparent 70%) center/330% 330% no-repeat;animation:bloom 2.4s ease both,breathe2 14s 2.4s ease-in-out infinite}
+@keyframes bloom{from{-webkit-mask-size:0 0;mask-size:0 0;opacity:0}}
+@keyframes breathe2{50%{transform:scale(1.03)}}
+.casc{display:inline-block}
+.casc b{display:inline-block;font-weight:400;color:#e6d3a8;animation:casc 5s ease-in-out infinite}
+@keyframes casc{0%,70%,100%{color:#e6d3a8;text-shadow:none}15%{color:#FFFBEA;text-shadow:0 0 18px rgba(247,231,206,.9)}}
+.amp{color:#e6d3a8}
 </style>
 </head>
 <body>
 <section id="hero">
-  <div class="bg"><i></i></div><div class="veil"></div>
+  <div class="bg"><i></i></div><div class="veil"></div><div class="ink" aria-hidden="true"></div>
   <div class="cnt rise">
     <p class="eyebrow">Save the date</p>
-    <h1><span class="foil">Marian</span><span class="amp foil" style="animation-delay:-2.6s">&amp;</span><span class="foil" style="animation-delay:-3.9s">Raúl</span></h1>
+    <h1><span class="casc">Marian</span><span class="amp">&amp;</span><span class="casc">Raúl</span></h1>
     <p class="meta">27 · Marzo · 2027<span>Tijuana, Baja California</span></p>
     <div class="cd" role="timer" aria-label="Cuenta regresiva">
       <div><b id="d">--</b><small>Días</small></div><div><b id="h">--</b><small>Horas</small></div><div><b id="m">--</b><small>Min</small></div><div><b id="s">--</b><small>Seg</small></div>
@@ -61,6 +68,7 @@ h1 .amp{font-family:'Great Vibes',cursive;font-size:.62em}
   </div>
 </section>
 <script>
+document.querySelectorAll('.casc').forEach(e=>{e.innerHTML=[...e.textContent].map((c,i)=>'<b style="animation-delay:'+i*.14+'s">'+c+'</b>').join('')});
 const W=new Date('2027-03-27T12:00:00-07:00'),p=n=>String(n).padStart(2,'0');
 function t(){let d=Math.max(0,W-Date.now());d=Math.floor(d/1000);
 document.getElementById('d').textContent=p(Math.floor(d/86400));document.getElementById('h').textContent=p(Math.floor(d%86400/3600));
